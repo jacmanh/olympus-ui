@@ -1,0 +1,33 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<ui-button /> it should render with "sm" styles 1`] = `
+<ui-button class="primary sm" size="sm">
+  <mock:shadow-root>
+    <slot></slot>
+  </mock:shadow-root>
+</ui-button>
+`;
+
+exports[`<ui-button /> it should render with "xs" styles 1`] = `
+<ui-button class="primary xs" size="xs">
+  <mock:shadow-root>
+    <slot></slot>
+  </mock:shadow-root>
+</ui-button>
+`;
+
+exports[`<ui-button /> it should render with Primary styles (default) 1`] = `
+<ui-button class="md primary">
+  <mock:shadow-root>
+    <slot></slot>
+  </mock:shadow-root>
+</ui-button>
+`;
+
+exports[`<ui-button /> it should render with Secondary styles 1`] = `
+<ui-button class="md secondary" color="secondary">
+  <mock:shadow-root>
+    <slot></slot>
+  </mock:shadow-root>
+</ui-button>
+`;
