@@ -25,7 +25,7 @@ const getComponent = ({ color = ButtonColors.primary, shape = null, text = null 
 }
 
 const ListTemplate = (args: ComponentProps) => {
-  return `<div class="flex items-start gap-3">
+  return `<div class="flex items-start gap-2">
       ${getComponent(args)}
     </div>`
 }
@@ -42,6 +42,12 @@ Secondary.args = {
   color: 'secondary',
 }
 
+export const Blue = ListTemplate.bind({})
+Blue.args = {
+  name: 'Blue',
+  color: 'blue',
+}
+
 export const Green = ListTemplate.bind({})
 Green.args = {
   name: 'Green',
@@ -52,12 +58,6 @@ export const GreenLight = ListTemplate.bind({})
 GreenLight.args = {
   name: 'GreenLight',
   color: 'greenLight',
-}
-
-export const Blue = ListTemplate.bind({})
-Blue.args = {
-  name: 'Blue',
-  color: 'blue',
 }
 
 export const Purple = ListTemplate.bind({})
