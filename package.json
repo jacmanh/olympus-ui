@@ -19,9 +19,9 @@
     "loader/"
   ],
   "scripts": {
-    "build": "stencil build --docs",
+    "build": "stencil build --docs-readme",
     "build:watch": "stencil build --docs-readme --watch",
-    "start": "BROWSER=google-chrome stencil build --dev --watch --serve",
+    "start": "npm run storybook",
     "test": "stencil test --spec --e2e",
     "test:watch": "stencil test --spec --e2e --watch",
     "generate": "stencil generate",
