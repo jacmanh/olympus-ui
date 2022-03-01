@@ -19,23 +19,26 @@
     "loader/"
   ],
   "scripts": {
-    "build": "stencil build --docs-readme && yarn build-storybook",
+    "build": "stencil build --docs",
     "build:watch": "stencil build --docs-readme --watch",
     "start": "npm run storybook",
     "test": "stencil test --spec --e2e",
     "test:watch": "stencil test --spec --e2e --watch",
     "generate": "stencil generate",
-    "storybook": "start-storybook -p 6006 -s dist",
+    "dev": "npm-run-all --parallel start storybook",
+    "storybook": "start-storybook -p 9002 -c .storybook -s dist",
     "build-storybook": "build-storybook -c ./.storybook -o ./public"
   },
   "dependencies": {
     "@stencil/core": "^2.12.1",
     "@stencil/react-output-target": "^0.2.0",
     "autoprefixer": "^10.4.2",
+    "nanoid": "^3.2.0",
     "tailwindcss": "^3.0.15"
   },
   "devDependencies": {
     "@babel/core": "^7.16.7",
+    "@stencil/postcss": "^2.1.0",
     "@stencil/sass": "^1.5.2",
     "@storybook/addon-actions": "^6.4.9",
     "@storybook/addon-essentials": "^6.4.9",
@@ -46,11 +49,11 @@
     "@testing-library/jest-dom": "^5.16.1",
     "@types/jest": "^27.4.0",
     "babel-loader": "^8.2.3",
-    "copy-webpack-plugin": "^10.2.0",
+    "copy-webpack-plugin": "^6.4.1",
     "jest": "^26.6.3",
     "jest-cli": "^26.6.3",
-    "postcss": "^8",
-    "postcss-loader": "^6.2.1",
+    "npm-run-all": "^4.1.5",
+    "postcss": "^8.4.7",
     "puppeteer": "^10.0.0",
     "ts-loader": "^9.2.6",
     "typescript": "^4.5.4",
