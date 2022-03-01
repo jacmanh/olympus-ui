@@ -6,7 +6,6 @@ module.exports = {
     '@storybook/addon-links',
     '@storybook/addon-essentials',
     '@storybook/addon-viewport',
-    '@storybook/addon-notes',
     {
       name: '@storybook/addon-postcss',
       options: {
@@ -32,13 +31,6 @@ module.exports = {
       historyApiFallback: true,
     }
 
-    //config.module.rules[0].use[0].options.sourceType = 'unambiguous'
-
-    // config.module.rules.push({
-    //   test: /.\.stories\.tsx$/,
-    //   exclude: /(src)/,
-    //   use: 'raw-loader',
-    // })
     config.module.rules.push({
       test: /.\.stories\.tsx$/,
       exclude: /(src)/,

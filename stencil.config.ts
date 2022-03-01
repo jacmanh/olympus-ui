@@ -20,7 +20,7 @@ export const config: Config = {
       serviceWorker: null, // disable service workers
     },
   ],
-  globalStyle: 'src/global/variables.css',
+  globalStyle: './src/global/variables.css',
   testing: {
     setupFilesAfterEnv: ['./src/tests/jest-setup.ts'],
   },
