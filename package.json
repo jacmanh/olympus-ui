@@ -19,15 +19,16 @@
     "loader/"
   ],
   "scripts": {
-    "build": "stencil build --docs",
+    "build": "stencil build --docs && yarn build-storybook",
     "build:watch": "stencil build --docs --watch",
     "start": "npm run storybook",
     "test": "stencil test --spec --e2e",
     "test:watch": "stencil test --spec --e2e --watch",
     "generate": "stencil generate",
-    "dev": "npm-run-all --parallel build:watch storybook",
-    "storybook": "start-storybook -p 9002 -c .storybook -s dist",
-    "build-storybook": "build-storybook -c ./.storybook -o ./dist"
+    "dev": "npm-run-all --parallel build:watch storybook:dev",
+    "storybook": "start-storybook -c .storybook -s dist",
+    "storybook:dev": "start-storybook -p 9002 -c .storybook -s dist",
+    "build-storybook": "build-storybook -c ./.storybook -o ./public"
   },
   "dependencies": {
     "@stencil/core": "^2.12.1",
