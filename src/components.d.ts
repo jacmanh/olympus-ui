@@ -6,11 +6,23 @@
  */
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
 import { ButtonColorProps, ButtonShapesProps, ButtonSizeProps } from "./components/ui-button/ui-button.types";
+import { IconList } from "./components/ui-icon/iconList";
 export namespace Components {
     interface UiButton {
         "color": ButtonColorProps;
         "shape": ButtonShapesProps;
         "size": ButtonSizeProps;
+    }
+    interface UiIcon {
+        "name": IconList;
+    }
+    interface UiInput {
+        "error": boolean;
+        "icon": IconList;
+        "label": string;
+        "success": boolean;
+        "type": string;
+        "value": string;
     }
 }
 declare global {
@@ -20,8 +32,22 @@ declare global {
         prototype: HTMLUiButtonElement;
         new (): HTMLUiButtonElement;
     };
+    interface HTMLUiIconElement extends Components.UiIcon, HTMLStencilElement {
+    }
+    var HTMLUiIconElement: {
+        prototype: HTMLUiIconElement;
+        new (): HTMLUiIconElement;
+    };
+    interface HTMLUiInputElement extends Components.UiInput, HTMLStencilElement {
+    }
+    var HTMLUiInputElement: {
+        prototype: HTMLUiInputElement;
+        new (): HTMLUiInputElement;
+    };
     interface HTMLElementTagNameMap {
         "ui-button": HTMLUiButtonElement;
+        "ui-icon": HTMLUiIconElement;
+        "ui-input": HTMLUiInputElement;
     }
 }
 declare namespace LocalJSX {
@@ -30,8 +56,21 @@ declare namespace LocalJSX {
         "shape"?: ButtonShapesProps;
         "size"?: ButtonSizeProps;
     }
+    interface UiIcon {
+        "name"?: IconList;
+    }
+    interface UiInput {
+        "error"?: boolean;
+        "icon"?: IconList;
+        "label"?: string;
+        "success"?: boolean;
+        "type"?: string;
+        "value"?: string;
+    }
     interface IntrinsicElements {
         "ui-button": UiButton;
+        "ui-icon": UiIcon;
+        "ui-input": UiInput;
     }
 }
 export { LocalJSX as JSX };
@@ -39,6 +78,8 @@ declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
             "ui-button": LocalJSX.UiButton & JSXBase.HTMLAttributes<HTMLUiButtonElement>;
+            "ui-icon": LocalJSX.UiIcon & JSXBase.HTMLAttributes<HTMLUiIconElement>;
+            "ui-input": LocalJSX.UiInput & JSXBase.HTMLAttributes<HTMLUiInputElement>;
         }
     }
 }
